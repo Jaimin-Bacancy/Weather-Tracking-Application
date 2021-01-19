@@ -66,6 +66,13 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 	} else if r.Method == "POST" {
 		tmpl, err := template.ParseFiles("index.html")
+
+		if err != nil {
+			fmt.Println("Error in template parse ", err)
+			tmpl.Execute(w, nil)
+			return
+		}
+
 		country := r.FormValue("country")
 		fmt.Println(country)
 		url := "http://api.weatherapi.com/v1/current.json?key=72d5b02f9eb4496b957105545211901&q=" + country
@@ -85,12 +92,6 @@ func index(w http.ResponseWriter, r *http.Request) {
 		err = json.Unmarshal(responsebody, &weather)
 		if err != nil {
 			fmt.Println("Error in unmarshal ", err)
-			tmpl.Execute(w, nil)
-			return
-		}
-
-		if err != nil {
-			fmt.Println("Error in template parse ", err)
 			tmpl.Execute(w, nil)
 			return
 		}
