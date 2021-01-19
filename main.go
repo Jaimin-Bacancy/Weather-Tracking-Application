@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"text/template"
 )
 
@@ -75,6 +76,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 		country := r.FormValue("country")
 		fmt.Println(country)
+		country = strings.Trim(country, " ")
 		url := "http://api.weatherapi.com/v1/current.json?key=72d5b02f9eb4496b957105545211901&q=" + country
 		response, err := http.Get(url)
 		if err != nil {
