@@ -50,10 +50,12 @@
                                 <th>Name</th>
                                 <th>Region</th>
                                 <th>Country</th>
-                                <th>Lat</th>
-                                <th>Lon</th>
-                                <th>TzID</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Time Zone</th>
                                 <th>Localtime</th>
+                                <th>TempC</th>
+                                <th>TempF</th>
                                 <th>WindMph</th>
                                 <th>wind_kph</th>
                                 <th>wind_degree</th>
@@ -69,6 +71,8 @@
                                 <td>{{.Location.Lon}}</td>
                                 <td>{{.Location.TzID}}</td>
                                 <td>{{.Location.Localtime}}</td>
+                                <td>{{.Current.TempC}} &#8451;</td>
+                                <td>{{.Current.TempF}} &#8457;</td>
                                 <td>{{.Current.WindMph}}</td>
                                 <td>{{.Current.WindKph}}</td>
                                 <td>{{.Current.WindDegree}}</td>
