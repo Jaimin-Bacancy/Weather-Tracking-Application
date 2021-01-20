@@ -26,25 +26,21 @@
                     <br> <br> 
                     <h1 class="text-center">Weather Information</h1>
                     <br> <br> 
-                <form action="/" method="POST">
-                    <div class="form-group">
-                        {{if not .Check}} 
-                         <h3 class="text-center" style="color:red;"> {{.Error.Message}} </h3>  <br>
-                        {{end}}
-                      
-                         <label><h3>Country or City or Place Name</h3></label>
-                       <input type="text" style="font-size: 20px;" name="country" required class="form-control" autocomplete="off" id="country" placeholder="Enter Country or City Name or Place Name">
-                    </div>
-                    <input type="submit" value="submit" class="btn btn-info btn-block">
-                </form>
-            </div>
-
-         
+                    <form action="/" method="POST">
+                        <div class="form-group">
+                            {{if not .Check}} 
+                            <h3 class="text-center" style="color:red;"> {{.Error.Message}} </h3>  <br>
+                            {{end}}
+                            <label><h3>Country or City or Place Name</h3></label>
+                            <input type="text" style="font-size: 20px;" name="country" required class="form-control" autocomplete="off" id="country" placeholder="Enter Country or City Name or Place Name">
+                        </div>
+                        <input type="submit" value="submit" class="btn btn-info btn-block">
+                    </form>
+                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <br><br> <br><br> <br><br>
-          
             {{if .Check}} 
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -82,7 +78,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    
             {{end}}
         </div>
 </body>
